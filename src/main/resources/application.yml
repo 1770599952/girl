@@ -1,0 +1,18 @@
+#代表了选择那个配置文件启动
+spring:
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/dbgirl
+    username: root
+    password: root
+  jpa:
+    hibernate:
+    # create : 每次启动时都会重新建表，并且将表中的数据清空
+    # update:每次启动时都会重新建表，并且将表中的数据清空
+    # none：什么都不做
+    # validate ： 会验证数据库的字段是否与java类的字段相同
+      ddl-auto: update
+    show-sql: true
+

@@ -1,0 +1,17 @@
+# 笔记
+# spring boot 内置tomcat 可以在spring boot的配置文件里修改版本里面的版本是跟着spring boot版本走的 spring版本越高内置的tomcat版本越高
+# 配置文件 可以是application.properties也可以是application.yml的配置文件。yml格式后缀的配置文件语法较为简单 配置的属性可以简化 冒号后面必须有空格
+
+# 服务器相关配置
+server:
+# 内置tomcat端口号配置
+  port: 8082
+# 配置访问时的桥接路径
+  context-path: /girl
+# 将配置注入成员属性,这里的girl相当于一个前缀
+girl:
+  cupSize: B
+  age: 18
+# 在配置文件中使用当前配置
+content: "cupSize: ${girl.cupSize},age:${girl.age}"
+# 我们还可以将配置文件属性注入java类中。见girlProperties
